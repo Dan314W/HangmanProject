@@ -16,7 +16,9 @@ public class HangmanGame
   // Initializes the triedLetters object to size 26
     public HangmanGame(String w) {
         word = w;
-        
+        guessedLetters.setLength(w.length());
+        guessedLetters.replace(0, w.length(), "-");
+        triedLetters.setLength(26);
     }
 
   // Method getWord
@@ -49,6 +51,16 @@ public class HangmanGame
   //         Include letter in triedLetters list
   //         Fill in all spots of the guessedLetters list with the correct guessed letter
     public int tryLetter(char letter) {
-        
+        letter = Character.toUpperCase(letter);
+        if (triedLetters.indexOf(Character.toString(letter)) == -1) {
+            return 0;
+        } else if (word.indexOf(letter) == -1) {
+            triedLetters.append(letter);
+            return -1;
+        } else {
+            triedLetters.append(letter);
+            guessedLetters.replace(word.indexOf(Character.toString(letter)), word.indexOf(Character.toString(letter))+1, Character.toString(letter));
+            return 1;
+        }
     }
 }

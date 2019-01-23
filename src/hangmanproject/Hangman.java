@@ -73,7 +73,7 @@ public class Hangman extends JPanel{
         Scanner inputFile = null;
         try{
             inputFile = new Scanner(new 
-                File("U:\\NetBeansProjects\\HangmanFiles\\WordList.txt"));
+                File("C:\\Users\\Mikey\\Documents\\NetBeansProjects\\HangmanProject\\src\\hangmanproject\\WordList.txt"));
         }
         catch (FileNotFoundException e){
             System.out.println("***  Can't find WordList.txt ***");
