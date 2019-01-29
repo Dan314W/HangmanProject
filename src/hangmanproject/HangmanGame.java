@@ -1,3 +1,5 @@
+package hangmanproject;
+
 public class HangmanGame
 {
   // Field variables
@@ -16,9 +18,13 @@ public class HangmanGame
   // Initializes the triedLetters object to size 26
     public HangmanGame(String w) {
         word = w;
-        guessedLetters.setLength(w.length());
-        guessedLetters.replace(0, w.length(), "-");
-        triedLetters.setLength(26);
+        guessedLetters = new StringBuffer(word.length());
+        for (int k = 0; k < w.length(); k++) {
+            guessedLetters.append('-');
+        }
+        triedLetters = new StringBuffer(26);
+        System.out.println(guessedLetters);
+        System.out.println(triedLetters);
     }
 
   // Method getWord
@@ -38,7 +44,6 @@ public class HangmanGame
     public String getTried() {
         return triedLetters.toString();
     }
-
   // Method tryLetter
   // @return - returns either 0, -1, or 1 based on description in Prob #21
   // @param char letter - this is the letter that is to be tried
@@ -52,7 +57,7 @@ public class HangmanGame
   //         Fill in all spots of the guessedLetters list with the correct guessed letter
     public int tryLetter(char letter) {
         letter = Character.toUpperCase(letter);
-        if (triedLetters.indexOf(Character.toString(letter)) == -1) {
+        if (triedLetters.indexOf(Character.toString(letter)) != -1) {
             return 0;
         } else if (word.indexOf(letter) == -1) {
             triedLetters.append(letter);

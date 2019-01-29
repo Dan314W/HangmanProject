@@ -1,5 +1,8 @@
 // Chapter 10 Question 21
 
+package hangmanproject;
+
+import hangmanproject.HangmanGame;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.*;
@@ -73,7 +76,7 @@ public class Hangman extends JPanel{
         Scanner inputFile = null;
         try{
             inputFile = new Scanner(new 
-                File("C:\\Users\\Mikey\\Documents\\NetBeansProjects\\HangmanProject\\src\\hangmanproject\\WordList.txt"));
+                File("C:\\Users\\MJNeff18579\\Documents\\NetBeansProjects\\HangmanProject\\src\\hangmanproject\\WordList.txt"));
         }
         catch (FileNotFoundException e){
             System.out.println("***  Can't find WordList.txt ***");
