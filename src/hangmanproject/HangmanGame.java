@@ -62,7 +62,10 @@ public class HangmanGame
             return -1;
         } else {
             triedLetters.append(letter);
-            guessedLetters.replace(word.indexOf(Character.toString(letter)), word.indexOf(Character.toString(letter))+1, Character.toString(letter));
+            for (int k = 0; k < word.length(); k++) {
+                if (word.charAt(k) == letter)
+                    guessedLetters.setCharAt(k, letter);
+            }
             return 1;
         }
     }
