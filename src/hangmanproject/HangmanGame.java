@@ -23,8 +23,6 @@ public class HangmanGame
             guessedLetters.append('-');
         }
         triedLetters = new StringBuffer(26);
-        System.out.println(guessedLetters);
-        System.out.println(triedLetters);
     }
 
   // Method getWord
